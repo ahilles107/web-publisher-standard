@@ -1,0 +1,79 @@
+{
+    "name": "superdeskwebpublisher/web-publisher-standard",
+    "description": "Superdesk Web Publisher Standard Edition - standard distribution of Superdesk Web Publisher.",
+    "type": "project",
+    "keywords": [
+        "superdesk",
+        "webpublisher",
+        "web-publisher",
+        "publishing",
+        "journalism",
+        "newsroom",
+        "news",
+        "media"
+    ],
+    "minimum-stability": "dev",
+    "license":"GPL-3.0",
+    "authors": [
+        {
+            "name": "Paweł Mikołajczuk",
+            "email": "pawel.mikolajczuk@sourcefabric.org"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ahilles107/SyliusThemeBundle"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "superdesk/web-publisher": "^0.1.0@dev"
+    },
+    "require-dev": {
+        "sensio/generator-bundle": "~3.0",
+        "doctrine/doctrine-fixtures-bundle": "^2.2@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        },
+        "classmap": [
+            "app/AppKernel.php",
+            "app/AppCache.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "symfony-scripts": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
+        ],
+        "post-install-cmd": [
+            "@symfony-scripts"
+        ],
+        "post-update-cmd": [
+            "@symfony-scripts"
+        ]
+    },
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-bin-dir": "bin",
+        "symfony-var-dir": "var",
+        "symfony-web-dir": "web",
+        "symfony-tests-dir": "tests",
+        "symfony-assets-install": "relative",
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        },
+        "branch-alias": null
+    }
+}

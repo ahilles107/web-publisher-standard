@@ -1,0 +1,18 @@
+swp_templateengine:
+    resource: "@SWPTemplateEngineBundle/Controller/"
+    type:     annotation
+
+swp_content:
+    resource: "@SWPContentBundle/Controller/"
+    type:     annotation
+
+swp_core:
+    resource: "@SWPCoreBundle/Controller/"
+    type:     annotation
+
+swp_bridge:
+    resource: "@SWPBridgeBundle/Resources/config/routing.yml"
+
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
